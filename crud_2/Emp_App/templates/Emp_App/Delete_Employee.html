@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>DELETE EMPLOYEE</title>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'Emp_App/css/add_emp.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>DELETE EMPLOYEE RECORDS</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2>{{obj.eid}} {{obj.first_name}} {{obj.last_name}}</h2>
+        <button type="submit" class="btn btn-dark col-5">DELETE EMPLOYEE</button>
+        <a href="{% url 'Show_Employee' %}"><button type="button" class="btn btn-dark col-5 float-end">CANCEL
+                EMPLOYEE</button></a>
+    </form>
+</div>
+{% endblock %}

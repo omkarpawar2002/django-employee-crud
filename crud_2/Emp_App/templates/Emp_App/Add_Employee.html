@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+<title>ADD EMPLOYEE</title>
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'Emp_App/css/add_emp.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>CREATE EMPLOYEE RECORDS</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{form | crispy}}
+        <button type="submit" class="btn btn-dark col-5">ADD EMPLOYEE</button>
+        <button type="reset" class="btn btn-dark col-5 float-end">RESET EMPLOYEE</button>
+    </form>
+</div>
+{% endblock %}

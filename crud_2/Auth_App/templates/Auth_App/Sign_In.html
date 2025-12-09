@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+<!-- {% load static %} -->
+<!-- {% load crispy_forms_tags %} -->
+
+{% block title %}
+<title>SIGN IN</title>
+{% endblock %}
+
+<!-- {% block head %}
+<link rel="stylesheet" href="{% static 'Emp_App/css/add_emp.css' %}">
+{% endblock %} -->
+
+{% block content %}
+<div class="container">
+    <h1>SIGN IN / LOG IN</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="username">USERNAME</label>
+            <input type="text" id="username" name="username" placeholder="Enter UserName" class="form-control">
+        </div>
+        <br>
+        <div>
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" name="password" placeholder="********" class="form-control">
+        </div>
+        <br>
+        <div>
+            <button type="submit" class="btn btn-dark col-5">SIGN IN</button>
+            <a href="{% url 'Sign_Up' %}"><button type="button" class="btn btn-dark col-5 float-end">SIGN UP</button></a>
+        </div>
+    </form>
+</div>
+{% endblock %}

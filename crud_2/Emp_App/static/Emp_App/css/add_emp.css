@@ -1,0 +1,9 @@
+.container {
+    background-color: #cecabb;
+    padding: 30px 2px;
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
